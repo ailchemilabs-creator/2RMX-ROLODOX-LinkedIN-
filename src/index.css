@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Sexy Blue Color Palette */
+  --color-indigo-50: #f0f8ff;
+  --color-indigo-100: #e0f2fe;
+  --color-indigo-200: #b0e0e6; /* Pale Aqua: #B0E0E6 */
+  --color-indigo-300: #7dd3fc; /* Light Cyan */
+  --color-indigo-400: #38bdf8; /* Sky Blue */
+  --color-indigo-500: #0091ff; /* Bright Blue */
+  --color-indigo-600: #007bff; /* Electric Blue: #007BFF */
+  --color-indigo-700: #0066d6;
+  --color-indigo-800: #0052ad;
+  --color-indigo-900: #003b80;
+  --color-indigo-950: #041d3d; /* Deep Midnight Navy */
+
+  --color-violet-50: #f0f8ff;
+  --color-violet-100: #e0f2fe;
+  --color-violet-200: #b0e0e6;
+  --color-violet-300: #7dd3fc;
+  --color-violet-400: #38bdf8;
+  --color-violet-500: #0091ff;
+  --color-violet-600: #007bff;
+  --color-violet-700: #0066d6;
+  --color-violet-800: #0052ad;
+  --color-violet-900: #003b80;
+  --color-violet-950: #041d3d;
+
+  --color-electric-blue: #007bff;
+  --color-bright-blue: #0091ff;
+  --color-sky-blue: #38bdf8;
+  --color-light-cyan: #7dd3fc;
+  --color-pale-aqua: #b0e0e6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe-area insets for modern mobile notched devices */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem));
+}
+
+/* Mobile ergonomics & touch target behavior */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-sans);
+  background-color: #09090b;
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
+  overscroll-behavior-y: none;
+}
+
+/* iOS Platform Adjustments (Apple Human Interface Guidelines) */
+html.platform-ios body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+  letter-spacing: -0.015em;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Android Platform Adjustments (Google Material Design 3) */
+html.platform-android body {
+  font-family: Roboto, "Google Sans", "Segoe UI", system-ui, sans-serif;
+  letter-spacing: 0.005em;
+}
+
+
